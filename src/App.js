@@ -1,4 +1,6 @@
 import countriesService from "./services/countries";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 
