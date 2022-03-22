@@ -2,7 +2,7 @@ import React from "react";
 
 import CountryCard from "./CountryCard";
 
-const CountriesList = ({ countries, search }) => {
+const CountriesList = ({ countries, search, regionFilter }) => {
 	let countriesDisplayed = countries;
 
 	if (search !== "") {
@@ -13,6 +13,13 @@ const CountriesList = ({ countries, search }) => {
 		countriesDisplayed = searchedCountries;
 	}
 
+	if (regionFilter !== "") {
+		const regionCountries = countriesDisplayed.filter(
+			(country) => country.region === regionFilter
+		);
+
+		countriesDisplayed = regionCountries;
+	}
 
 	return (
 		<>

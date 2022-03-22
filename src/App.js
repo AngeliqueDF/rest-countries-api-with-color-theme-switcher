@@ -13,6 +13,7 @@ function App() {
 	// using the URL parameters to track search and region filters
 	const [searchParams, setSearchParams] = useSearchParams({
 		search: "",
+		region: "",
 	});
 
 	// getting countries and their information from the API
@@ -34,6 +35,15 @@ function App() {
 		setSearchParams(searchParams);
 	};
 
+	/**
+	 * 	Changes the region url parameter to the value selected in the dropdown.
+	 * @param {Object} region
+	 */
+	const handleRegionFilter = (region) => {
+		searchParams.set("region", region);
+		setSearchParams(searchParams);
+	};
+
 	return (
 		<div>
 			<Header />
@@ -46,7 +56,9 @@ function App() {
 							<Home
 								countries={countries}
 								search={searchParams.get("search")}
+								region={searchParams.get("region")}
 								handleSearch={handleSearch}
+								handleRegionFilter={handleRegionFilter}
 							/>
 						}
 					/>
