@@ -62,7 +62,11 @@ const CountryDetails = ({ countries }) => {
 
 			<Row>
 				<Col>
-					<Image src={country.flags.svg} fluid="true" />
+					<Image
+						src={country.flags.svg}
+						fluid="true"
+						alt={`Flag of ${country.name.common}`}
+					/>
 				</Col>
 
 				<Col>

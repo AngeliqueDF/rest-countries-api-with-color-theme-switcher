@@ -10,7 +10,12 @@ const CountryCard = ({ country }) => {
 		<li>
 			<Link to={`countries/${country.cca3}`}>
 				<Card as="article" style={{ width: "18rem" }}>
-					<Card.Img variant="top" src={country.flags.svg} fluid="true" />
+					<Card.Img
+						variant="top"
+						src={country.flags.svg}
+						fluid="true"
+						alt={`Flag of ${country.name.common}`}
+					/>
 					<Card.Title as="h2">{country.name.common}</Card.Title>
 					<Card.Body>
 						<ListGroup>
