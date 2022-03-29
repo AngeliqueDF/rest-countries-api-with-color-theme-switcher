@@ -1,6 +1,7 @@
 import countriesService from "./services/countries";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import "./css/App.scss";
 import { useState, useEffect } from "react";
 import { Routes, Route, useSearchParams } from "react-router-dom";
 
@@ -10,6 +11,7 @@ import CountryDetails from "./components/CountryDetails";
 
 function App() {
 	const [countries, setCountries] = useState([]);
+	// console.log(countries);
 
 	// using the URL parameters to track search and region filters
 	const [searchParams, setSearchParams] = useSearchParams({
@@ -47,6 +49,7 @@ function App() {
 
 	return (
 		<div>
+		<>
 			<Header />
 
 			<main>
@@ -75,6 +78,7 @@ function App() {
 				</Routes>
 			</main>
 		</div>
+		</>
 	);
 }
 
