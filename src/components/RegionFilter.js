@@ -14,13 +14,14 @@ const RegionFilter = ({ region, handleRegionFilter }) => {
 	return (
 		<>
 			<Dropdown>
-				<Dropdown.Toggle>
+				<Dropdown.Toggle className="region-toggle">
 					Filter by <span className="uppercase">r</span>egion
 				</Dropdown.Toggle>
 
-				<Dropdown.Menu align="start">
+				<Dropdown.Menu className="region-menu">
 					{regions.map((regionOption, i) => (
 						<Dropdown.Item
+							className="region-item"
 							active={regionOption === region ? true : false}
 							onClick={handleOnchange}
 							key={regionOption}
