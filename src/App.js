@@ -1,6 +1,4 @@
 import countriesService from "./services/countries";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./css/App.scss";
 import { useState, useEffect } from "react";
 import { Routes, Route, useSearchParams } from "react-router-dom";
@@ -20,10 +18,13 @@ function App() {
 	});
 
 	// getting countries and their information from the API
-	useEffect(async () => {
+	useEffect(() => {
 		try {
-			const response = await countriesService.getAll();
-			setCountries(response.data);
+			async function fetchCountries() {
+				const response = await countriesService.getAll();
+				setCountries(response.data);
+			}
+			fetchCountries();
 		} catch (error) {
 			console.log(error);
 		}
@@ -48,7 +49,6 @@ function App() {
 	};
 
 	return (
-		<div>
 		<>
 			<Header />
 
@@ -77,7 +77,6 @@ function App() {
 					/>
 				</Routes>
 			</main>
-		</div>
 		</>
 	);
 }
