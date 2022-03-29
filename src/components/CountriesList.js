@@ -26,13 +26,11 @@ const CountriesList = ({ countries, search, regionFilter }) => {
 	}
 
 	return (
-		<>
-			<ul>
-				{countriesDisplayed.map((country) => (
-					<CountryCard key={country.cca3} country={country} />
-				))}
-			</ul>
-		</>
+		<ul className="countries-list">
+			{countriesDisplayed.map((country) => (
+				<CountryCard key={country.cca3} country={country} />
+			))}
+		</ul>
 	);
 };
 
