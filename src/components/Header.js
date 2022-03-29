@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
 	return (
 		<header>
-			<Link to="/">
-				<h1>Where in the world?</h1>
-			</Link>
+			<h1>
+				<Link to="/">Where in the world?</Link>
+			</h1>
 
-			<button>Dark theme</button>
+			<button className="toggle-theme capitalize">Dark mode</button>
 		</header>
 	);
 };
