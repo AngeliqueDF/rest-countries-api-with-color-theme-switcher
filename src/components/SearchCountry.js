@@ -8,8 +8,9 @@ const SearchCountry = ({ search, handleSearch }) => {
 
 	return (
 		<input
+			className="search-input"
 			type="search"
-			placeholder="Search for a country"
+			placeholder="Search for a country..."
 			value={search}
 			onChange={handleChange}
 		/>
