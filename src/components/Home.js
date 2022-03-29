@@ -13,15 +13,23 @@ const Home = ({
 }) => {
 	return (
 		<>
-			<div>
-				<SearchCountry search={search} handleSearch={handleSearch} />
-				<RegionFilter region={region} handleRegionFilter={handleRegionFilter} />
+			<div className="container">
+				<div className="filters">
+					<SearchCountry search={search} handleSearch={handleSearch} />
+					<RegionFilter
+						region={region}
+						handleRegionFilter={handleRegionFilter}
+					/>
+				</div>
 			</div>
-			<CountriesList
-				countries={countries}
-				search={search}
-				regionFilter={region}
-			/>
+
+			<div className="container">
+				<CountriesList
+					countries={countries}
+					search={search}
+					regionFilter={region}
+				/>
+			</div>
 		</>
 	);
 };
