@@ -19,7 +19,7 @@ const RegionFilter = ({ region, handleRegionFilter }) => {
 				</Dropdown.Toggle>
 
 				<Dropdown.Menu className="region-menu">
-					{regions.map((regionOption, i) => (
+					{regions.map((regionOption) => (
 						<Dropdown.Item
 							className="region-item"
 							active={regionOption === region ? true : false}

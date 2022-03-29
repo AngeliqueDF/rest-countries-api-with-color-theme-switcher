@@ -127,7 +127,7 @@ const CountryDetails = ({ countries }) => {
 								<div className="d-flex flex-column">
 									<div>
 										<h3 className="border-countries-title capitalize">
-											Borders countries:{" "}
+											Border countries:{" "}
 										</h3>{" "}
 									</div>
 									<div className="d-flex flex-wrap borders-list justify-content-start">
