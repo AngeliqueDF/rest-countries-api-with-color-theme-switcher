@@ -58,98 +58,110 @@ const CountryDetails = ({ countries }) => {
 		return nativeName[nativeName.length - 1].common;
 	};
 	const nativeName = findNativeName(country.name.nativeName);
+
+	const mainCountryInfo = [
+		{ term: "Native name", value: nativeName },
+		{ term: "Population", value: helpers.formatNumber(country.population) },
+		{ term: "Region", value: country.region },
+		{ term: "Sub region", value: country.subregion },
+		{ term: "Capital", value: country.capital },
+	];
 	return (
 		<>
 			<div className="country-details-container">
 				<GoBackButton />
 
 				<div className="country-details">
-					<Col>
-						<Image
-							src={country.flags.svg}
-							fluid="true"
-							alt={`Flag of ${country.name.common}`}
-						/>
-					</Col>
+					<Image
+						src={country.flags.svg}
+						alt={`Flag of ${country.name.common}`}
+						className="country-flag"
+					/>
 
-					<Col>
+					<div>
 						<h2 className="country-name">{country.name.common}</h2>
 
-						<ListGroup as="ul" className="details-list">
-							<ListGroup.Item as="li">
-								<span className="bold">Native name:</span> {nativeName}
-							</ListGroup.Item>
-							<ListGroup.Item as="li">
-								<span className="bold">Population: </span>{" "}
-								{helpers.formatNumber(country.population)}
-							</ListGroup.Item>
-							<ListGroup.Item as="li">
-								<span className="bold">Region: </span> {country.region}
-							</ListGroup.Item>
-							<ListGroup.Item as="li">
-								<span className="bold">Subregion: </span> {country.subregion}
-							</ListGroup.Item>
-							<ListGroup.Item as="li">
-								<span className="bold">Capital: </span> {country.capital}
-							</ListGroup.Item>
+						<div className="country-info">
+							<ListGroup as="dl" className="details-col-one">
+								<div>
+									{mainCountryInfo.map((info, index) => (
+										<div
+											className="d-flex flex-wrap country-info-row"
+											key={index}
+										>
+											<dt className="capitalize bold">{info.term}:&nbsp;</dt>
+											<dd>{info.value}</dd>
+										</div>
+									))}
+								</div>
+							</ListGroup>
 
-							<ListGroup.Item as="li">
-								<span className="bold">Top level domain: </span>
-								{country.tld}
-							</ListGroup.Item>
-						</ListGroup>
+							<div className="details-col-two">
+								<div className="d-flex flex-wrap">
+									<dt className="capitalize bold">Top level domain:&nbsp;</dt>
+									<dd>{country.tld}</dd>
+								</div>
 
-						<ListGroup horizontal>
-							<span className="bold">Currencies:&nbsp;</span>
-							{displayCurrencies.map((currency, index) => (
-								<ListGroup.Item as="li" key={currency.name}>
-									{helpers.listPunctuation(
-										displayCurrencies,
-										currency.name,
-										index
-									)}
-								</ListGroup.Item>
-							))}
-						</ListGroup>
-
-						<ListGroup horizontal>
-							<span className="bold">Languages:&nbsp;</span>
-							{displayLanguages.map((language, index) => (
-								<ListGroup.Item as="li" key={language}>
-									{helpers.listPunctuation(displayLanguages, language, index)}
-								</ListGroup.Item>
-							))}
-						</ListGroup>
+								<ListGroup
+									as="ul"
+									className="currencies country-info-row"
+									horizontal
+								>
+									<span className="bold">Currencies:&nbsp;</span>
+									{displayCurrencies.map((currency, index) => (
+										<ListGroup.Item as="li" key={currency.name}>
+											{helpers.listPunctuation(
+												displayCurrencies,
+												currency.name,
+												index
+											)}
+										</ListGroup.Item>
+									))}
+								</ListGroup>
+								<ListGroup
+									as="ul"
+									className="languages country-info-row"
+									horizontal
+								>
+									<span className="bold">Languages:&nbsp;</span>
+									{displayLanguages.map((language, index) => (
+										<ListGroup.Item as="li" key={language}>
+											{helpers.listPunctuation(
+												displayLanguages,
+												language,
+												index
+											)}
+										</ListGroup.Item>
+									))}
+								</ListGroup>
+							</div>
+						</div>
 
 						{/* Displaying the list of bordering countries if the current country has any */}
 						{country.borders ? (
 							<ListGroup as="ul" className="borders-list-container">
-								<div className="d-flex flex-column">
-									<div>
-										<h3 className="border-countries-title capitalize">
-											Border countries:{" "}
-										</h3>{" "}
-									</div>
-									<div className="d-flex flex-wrap borders-list justify-content-start">
-										{borderCountries.map((border) => (
-											<ListGroup.Item
-												className="border-country"
-												as="li"
-												key={border[0].cca3}
+								<h3 className="border-countries-title capitalize">
+									Border countries:{" "}
+								</h3>{" "}
+								<div className="d-flex flex-wrap borders-list justify-content-start">
+									{borderCountries.map((border) => (
+										<ListGroup.Item
+											className="border-country"
+											as="li"
+											key={border[0].cca3}
+										>
+											<Link
+												className="border-country-link"
+												to={`/countries/${border[0].cca3}`}
 											>
-												<Link
-													className="border-country-link"
-													to={`/countries/${border[0].cca3}`}
-												>
-													{border[0].name.common}
-												</Link>
-											</ListGroup.Item>
-										))}
-									</div>
+												{border[0].name.common}
+											</Link>
+										</ListGroup.Item>
+									))}
 								</div>
 							</ListGroup>
 						) : null}
-					</Col>
+					</div>
 				</div>
 			</div>
 		</>

@@ -198,6 +198,7 @@ a .card-title {
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
 	background-color: var(--elements);
+	border-radius: 0.25rem;
 }
 
 .search-input,
@@ -213,6 +214,10 @@ a .card-title {
 	background-color: var(--elements);
 	border: none;
 	width: 12.4rem;
+}
+
+.region-menu {
+	box-shadow: var(--light-shadow);
 }
 .region-toggle {
 	padding: 0.8rem 1.4rem;
@@ -334,7 +339,47 @@ a .card-title {
 			}
 		}
 	}
-	.country-details-container {
-		width: 90%;
+	.country-details {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
+		.country-flag {
+			width: 45%;
+		}
+		& > div {
+			width: 49%;
+		}
+		.country-info-row {
+			margin-bottom: 0.75rem;
+		}
+		.country-info {
+			display: flex;
+			justify-content: space-between;
+			.details-col-one,
+			.details-col-two {
+				width: 49%;
+			}
+		}
+		.currencies,
+		.languages {
+			width: 100%;
+			flex-wrap: wrap;
+		}
+		.borders-list-container {
+			margin-block-start: 3rem;
+			display: flex;
+			flex-direction: row;
+			.border-countries-title {
+				margin: 0.25rem 0.7rem 0 0;
+				min-width: 8rem;
+			}
+			.borders-list {
+				min-width: unset;
+				.border-country {
+					margin: 0 0.5rem 1rem 0;
+				}
+			}
+		}
 	}
 }
