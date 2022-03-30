@@ -198,6 +198,7 @@ a .card-title {
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
 	background-color: var(--elements);
+	border-radius: 0.25rem;
 }
 
 .search-input,
@@ -213,6 +214,10 @@ a .card-title {
 	background-color: var(--elements);
 	border: none;
 	width: 12.4rem;
+}
+
+.region-menu {
+	box-shadow: var(--light-shadow);
 }
 .region-toggle {
 	padding: 0.8rem 1.4rem;
