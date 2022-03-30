@@ -15,25 +15,69 @@
 	src: url("./../fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf");
 	font-weight: 800;
 }
+@mixin light-theme-values {
+	--background-color: hsl(0, 0%, 98%);
+	--elements: hsl(0, 0%, 100%);
+	--text: hsl(200, 15%, 8%);
+	--input: hsl(0, 0%, 52%);
+	--font-size: 14px;
+	--horizontal-spacing: 0.8rem;
+	--theme-toggle-button-icon: url("./../images/icon-dark-mode.svg");
+	--back-btn-background-blend-mode: difference;
+	--light-shadow: 0px 1px 5px 0px rgba(200, 200, 200, 0.4);
+	--medium-shadow: 0px 0px 4px 1px rgba(180, 180, 180, 0.3);
+	--back-btn-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+	--icon-search: url("./../images/icon-search-light.svg");
+}
+@mixin dark-theme-values {
+	--background-color: hsl(207, 26%, 17%);
+	--elements: hsl(209, 23%, 22%);
+	--text: hsl(0, 0%, 100%);
+	--input: hsl(0, 0%, 52%);
+	--font-size: 14px;
+	--horizontal-spacing: 0.8rem;
+	--theme-toggle-button-icon: url("./../images/icon-light-mode.svg");
+	--light-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.4);
+	--medium-shadow: 0px 0px 4px 1px rgba(30, 30, 30, 0.6);
+	--back-btn-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.25);
+	--back-btn-background-blend-mode: none;
+	--icon-search: url("./../images/icon-search-dark.svg");
+}
 
-$background-color: hsl(0, 0%, 98%);
-$elements: hsl(0, 0%, 100%);
-$text: hsl(200, 15%, 8%);
-$input: hsl(0, 0%, 52%);
-$font-size: 14px;
-$horizontal-spacing: 0.8rem;
+:root {
+	@include light-theme-values();
+}
+
+.light-theme {
+	@include light-theme-values();
+}
+
+.dark-theme {
+	@include dark-theme-values();
+}
+
+.region-item,
+.card-body li,
+.details-list li {
+	color: var(--text);
+}
+
+.search-input::placeholder,
+.search-input {
+	color: var(--text);
+}
 
 body {
-	font-size: $font-size;
-	background-color: $background-color;
-	color: $text;
+	font-size: var(--font-size);
+	background-color: var(--background-color);
+	color: var(--text);
 	font-family: "Nunito Sans";
 	font-weight: 300;
 }
 
 a {
 	text-decoration: none;
-	color: $text;
+	color: var(--text);
 }
 
 ul {
@@ -46,6 +90,8 @@ ul {
 
 .countries-list {
 	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 li.list-group-item {
@@ -60,10 +106,13 @@ li.list-group-item {
 	width: 18rem;
 	img {
 		height: 10rem;
-		box-shadow: 0px 1px 2px 0px rgba(200, 200, 200, 0.4);
+		box-shadow: var(--light-shadow);
+		border-radius: 7px 7px 0 0;
 	}
 	.card {
+		border-radius: 7px;
 		border: none;
+		background-color: var(--elements);
 	}
 	.card-title {
 		padding: 1rem 1rem 1rem 1.5rem;
@@ -82,12 +131,12 @@ li.list-group-item {
 header {
 	display: flex;
 	justify-content: space-between;
-	background-color: $elements;
+	background-color: var(--elements);
 	margin-block-end: 1rem;
-	padding: 1rem 0.8rem;
-	box-shadow: 0px 1px 5px 0px rgba(200, 200, 200, 0.4);
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(200, 200, 200, 0.4);
-	-moz-box-shadow: 0px 1px 5px 0px rgba(200, 200, 200, 0.4);
+	padding: 1rem 1.6rem;
+	box-shadow: var(--light-shadow);
+	-webkit-box-shadow: var(--light-shadow);
+	-moz-box-shadow: var(--light-shadow);
 }
 
 h1 a {
@@ -98,18 +147,19 @@ h1 a,
 a .card-title {
 	text-decoration: none;
 	font-size: 0.9rem;
-	color: $text;
+	color: var(--text);
 }
 
 .toggle-theme {
+	color: var(--text);
 	border: none;
 	background-color: transparent;
 	padding: 0;
-	background-image: url("./../images/dark-mode.svg");
+	background-image: var(--theme-toggle-button-icon);
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 16px 16px;
-	padding-left: 1.5rem;
+	padding-inline-start: 1.5rem;
 	font-size: 0.8rem;
 }
 
@@ -117,35 +167,37 @@ a .card-title {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-inline: $horizontal-spacing;
+	margin-inline: var(--horizontal-spacing);
 	margin-block-end: 1.4rem;
 }
 
 .back-button {
-	-webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: var(--back-btn-shadow);
+	-moz-box-shadow: var(--back-btn-shadow);
+	box-shadow: var(--back-btn-shadow);
 }
 
 .border-country-link {
-	box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+	box-shadow: var(--medium-shadow);
 }
+
 .region-toggle,
 .country-card .card,
 .search-input {
-	box-shadow: 0px 0px 8px 1px rgba(151, 151, 151, 0.1);
-	-webkit-box-shadow: 0px 0px 8px 1px rgba(151, 151, 151, 0.1);
-	-moz-box-shadow: 0px 0px 8px 1px rgba(151, 151, 151, 0.1);
+	box-shadow: var(--light-shadow);
+	-webkit-box-shadow: var(--light-shadow);
+	-moz-box-shadow: var(--light-shadow);
 }
 
 .search-input {
 	margin-block-end: 1.6rem;
 	border: none;
-	padding: 0.8rem 4.2rem;
-	background-image: url("./../images/3669253_ic_search_icon.svg");
+	padding: 0.8rem 0.8rem 0.8rem 4.2rem;
+	background-image: var(--icon-search);
 	background-position: 1.4rem center;
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
+	background-color: var(--elements);
 }
 
 .search-input,
@@ -157,15 +209,15 @@ a .card-title {
 .region-toggle,
 .region-menu {
 	text-align: left;
-	color: $text;
-	background-color: $elements;
+	color: var(--text);
+	background-color: var(--elements);
 	border: none;
 	width: 12.4rem;
 }
 .region-toggle {
 	padding: 0.8rem 1.4rem;
 	&::after {
-		margin-left: 4rem;
+		margin-inline-start: 4rem;
 	}
 }
 
@@ -174,15 +226,17 @@ a .card-title {
 }
 
 .back-button {
+	color: var(--text);
 	width: 6rem;
 	border: none;
-	background-color: $elements;
-	background-image: url("./../images/reshot-icon-arrow-left-UZDAC2LESG.svg");
+	background-color: var(--elements);
+	background-image: url("./../images/icon-arrow-left.svg");
 	background-repeat: no-repeat;
 	background-position: 26px center;
 	background-size: 16px 16px;
 	margin: 1.5rem 0 4rem 0;
 	padding: 0.4rem 2rem 0.4rem 3rem;
+	background-blend-mode: var(--back-btn-background-blend-mode);
 }
 
 .country-details-container {
@@ -192,35 +246,50 @@ a .card-title {
 }
 
 .country-details {
-	display: grid;
 	padding-block-end: 3rem;
+	.country-flag {
+		max-width: 100%;
+	}
 	& > * {
 		background-color: transparent;
 	}
 	.country-name {
+		margin-block-start: 3rem;
 		font-weight: 800;
 	}
-	.spacer {
-		height: 2rem;
+
+	.details-col-one,
+	.details-col-two,
+	.country-name,
+	.country-capital,
+	.border-countries-title {
+		margin-block-end: 1.5rem;
+	}
+	.languages li,
+	.currencies li {
+		color: var(--text);
 	}
 	.borders-list-container {
 		width: 100%;
 	}
 	.border-countries-title {
+		font-size: 1rem;
 		font-weight: 600;
 	}
 	.borders-list {
 		min-width: 100%;
 	}
 	.border-country {
-		margin: 0 0.35rem 1rem 0;
-		margin-right: 0.35rem;
+		margin: 0 0.5rem 1rem 0;
+		border-radius: 5px;
 	}
 	.border-country-link {
-		background-color: $elements;
-		padding: 0.35rem 1.3rem;
+		background-color: var(--elements);
+		padding: 0.35rem 1rem;
+		border-radius: 2px;
 		width: 100%;
 		height: 100%;
+		font-size: 0.8rem;
 	}
 }
 
