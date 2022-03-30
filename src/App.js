@@ -86,7 +86,10 @@ function App() {
 
 	return (
 		<>
-			<Header />
+			<Header
+				darkThemeEnabled={darkThemeEnabled}
+				toggleTheme={handleThemeToggle}
+			/>
 
 			<main>
 				<Routes>
