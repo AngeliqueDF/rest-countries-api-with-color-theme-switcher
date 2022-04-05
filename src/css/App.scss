@@ -273,16 +273,17 @@ a .card-title {
 	.languages li,
 	.currencies li {
 		color: var(--text);
+		margin-right: 4px;
 	}
-	.borders-list-container {
+	.borders-list {
 		width: 100%;
+		flex-wrap: wrap;
+		flex-direction: row;
 	}
 	.border-countries-title {
 		font-size: 1rem;
 		font-weight: 600;
-	}
-	.borders-list {
-		min-width: 100%;
+		min-width: fit-content;
 	}
 	.border-country {
 		margin: 0 0.5rem 1rem 0;
@@ -332,7 +333,6 @@ a .card-title {
 		width: 100%;
 		.country-card {
 			flex-basis: 16.3rem;
-			height: 20rem;
 			margin: 0 0 5rem;
 			.card-body {
 				padding: 0 1.5rem 3rem 1.5rem;
@@ -344,6 +344,12 @@ a .card-title {
 		justify-content: space-between;
 		align-items: center;
 		padding: 0;
+		.border-countries {
+			align-items: center;
+		}
+		h3.border-countries-title {
+			margin: 0.25rem 0.7rem auto auto;
+		}
 		.country-flag {
 			width: 45%;
 		}
@@ -360,26 +366,17 @@ a .card-title {
 			.details-col-two {
 				width: 49%;
 			}
+			dl dd {
+				margin-bottom: 0 !important;
+			}
 		}
 		.currencies,
 		.languages {
 			width: 100%;
 			flex-wrap: wrap;
 		}
-		.borders-list-container {
-			margin-block-start: 3rem;
-			display: flex;
-			flex-direction: row;
-			.border-countries-title {
-				margin: 0.25rem 0.7rem 0 0;
-				min-width: 8rem;
-			}
-			.borders-list {
-				min-width: unset;
-				.border-country {
-					margin: 0 0.5rem 1rem 0;
-				}
-			}
+		.borders-list {
+			margin: 0;
 		}
 	}
 }
