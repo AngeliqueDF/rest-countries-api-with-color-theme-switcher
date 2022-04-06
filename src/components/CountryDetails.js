@@ -25,7 +25,7 @@ const CountryDetails = ({ countries, setCountries }) => {
         }
       }
       fetchCountries();
-      // Then find the current country using the URL parameter :cca3.
+      // Then find the current country's information to display using the URL parameter, :cca3
       const foundCountry = countries.find(
         (storedCountry) => storedCountry.cca3 === cca3
       );
@@ -71,6 +71,7 @@ const CountryDetails = ({ countries, setCountries }) => {
         <GoBackButton />
 
         <div className="country-details">
+          {/* The country's flag */}
           <Image
             src={country.flags.svg}
             alt={`Flag of ${country.name.common}`}
@@ -108,7 +109,7 @@ const CountryDetails = ({ countries, setCountries }) => {
               </div>
             </div>
 
-            {/* Displaying the list of bordering countries if the current country has any */}
+            {/* Displaying the list of bordering countries if any */}
             {country.borders ? (
               <section className="d-flex border-countries">
                 <h3 className="border-countries-title capitalize">
