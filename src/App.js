@@ -8,14 +8,38 @@ import Home from "./components/Home";
 import CountryDetails from "./components/CountryDetails";
 
 function App() {
-	// stores the current system color scheme (true: dark, false: light)
+	/**
+	 * Countries: the full list of countries
+	 */
+
+	const [countries, setCountries] = useState([]);
+
+	// getting countries and their information from the API
+	useEffect(() => {
+		try {
+			async function fetchCountries() {
+				const response = await countriesService.getAll();
+				setCountries(response.data);
+			}
+			fetchCountries();
+		} catch (error) {
+			// console.log(error);
+			console.log("Can't get countries data");
+		}
+	}, []);
+
+	/**
+	 * Dark theme
+	 */
+
+	// darkThemeEnabled stores the current system color scheme (true: dark, false: light)
 	const [darkThemeEnabled, setDarkThemeEnabled] = useState(
 		window.matchMedia("(prefers-color-scheme: dark)").matches
 	);
 	// Select the root element to toggle theme
 	const rootElement = document.querySelector(":root");
 
-	// At first, follow the current default system theme (light or dark)
+	// At first, the app's default will be the current system color scheme (light or dark)
 	useEffect(() => {
 		if (darkThemeEnabled) {
 			rootElement.classList.add("dark-theme");
@@ -45,26 +69,15 @@ function App() {
 		window.localStorage.setItem("darkThemeEnabled", !darkThemeEnabled);
 	};
 
-	const [countries, setCountries] = useState([]);
+	/**
+	 * Search state
+	 */
 
 	// using the URL parameters to track search and region filters
 	const [searchParams, setSearchParams] = useSearchParams({
 		search: "",
 		region: "",
 	});
-
-	// getting countries and their information from the API
-	useEffect(() => {
-		try {
-			async function fetchCountries() {
-				const response = await countriesService.getAll();
-				setCountries(response.data);
-			}
-			fetchCountries();
-		} catch (error) {
-			console.log(error);
-		}
-	}, []);
 
 	/**
 	 * Changes the search= url parameter to the value entered in the search field.
