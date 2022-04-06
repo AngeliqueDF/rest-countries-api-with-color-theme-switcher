@@ -7,26 +7,26 @@ import GoBackButton from "./GoBackButton";
 import Image from "react-bootstrap/Image";
 import CountryInfoRow from "./CountryInfoRow";
 
-const CountryDetails = ({ countries }) => {
+const CountryDetails = ({ countries, setCountries }) => {
+  const [country, setCountry] = useState(null);
+
   // Getting the current country code from the URL.
   const { cca3 } = useParams();
 
-  // Initiliazing countriesList with countries. We might lose that value if the browser is refreshed.
-  const [countriesList, setCountriesList] = useState(countries);
-  const [country, setCountry] = useState(null);
-
+  // We check we still have the value of countries (lost when the browser is refreshed for example).
+  // It is needed to display the selected country's detailed information and to find bordering countries' names by their :cca3
   useEffect(() => {
     try {
       // If we lost the countries values, we request them from the API.
       async function fetchCountries() {
         if (countries.length === 0) {
           const response = await countriesService.getAll();
-          setCountriesList(response.data);
+          setCountries(response.data);
         }
       }
       fetchCountries();
       // Then find the current country using the URL parameter :cca3.
-      const foundCountry = countriesList.find(
+      const foundCountry = countries.find(
         (storedCountry) => storedCountry.cca3 === cca3
       );
       setCountry(foundCountry);
@@ -36,7 +36,7 @@ const CountryDetails = ({ countries }) => {
   }, [cca3, country, countriesList, countries.length]);
 
   // The component might not be ready to display information at first because it's relying the network. In this case we display a loading status.
-  if (countriesList.length === 0 || !country) {
+  if (countries.length === 0 || !country) {
     return <div>loading</div>;
   }
 
@@ -45,7 +45,7 @@ const CountryDetails = ({ countries }) => {
   if (country.borders) {
     // Use the code of each country to find it in the API.
     borderCountries = country.borders.map((border) =>
-      countriesList.filter((storedCountry) => storedCountry.cca3 === border)
+      countries.filter((storedCountry) => storedCountry.cca3 === border)
     );
   }
 
