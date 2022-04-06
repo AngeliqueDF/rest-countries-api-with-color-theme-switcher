@@ -33,7 +33,7 @@ const CountryDetails = ({ countries, setCountries }) => {
     } catch (error) {
       console.log(error);
     }
-  }, [cca3, country, countriesList, countries.length]);
+  }, [countries, setCountries, cca3]);
 
   // The component might not be ready to display information at first because it's relying the network. In this case we display a loading status.
   if (countries.length === 0 || !country) {
