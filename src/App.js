@@ -14,19 +14,6 @@ function App() {
 
 	const [countries, setCountries] = useState([]);
 
-	// getting countries and their information from the API
-	useEffect(() => {
-		try {
-			async function fetchCountries() {
-				const response = await countriesService.getAll();
-				setCountries(response.data);
-			}
-			fetchCountries();
-		} catch (error) {
-			// console.log(error);
-			console.log("Can't get countries data");
-		}
-	}, []);
 
 	/**
 	 * Dark theme
@@ -131,6 +118,19 @@ function App() {
 			</main>
 		</>
 	);
+  // getting countries and their information from the API
+  useEffect(() => {
+    async function fetchCountries() {
+      try {
+        const response = await countriesService.getAll();
+        setCountries(response.data);
+      } catch (error) {
+        console.log("Error: can't get the countries data.", error);
+      }
+    }
+    fetchCountries();
+  }, []);
+
 }
 
 export default App;
