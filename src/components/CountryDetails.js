@@ -13,19 +13,9 @@ const CountryDetails = ({ countries, setCountries }) => {
   // Getting the current country code from the URL.
   const { cca3 } = useParams();
 
-  // We check we still have the value of countries (lost when the browser is refreshed for example).
-  // It is needed to display the selected country's detailed information and to find bordering countries' names by their :cca3
   useEffect(() => {
     try {
-      // If we lost the countries values, we request them from the API.
-      async function fetchCountries() {
-        if (countries.length === 0) {
-          const response = await countriesService.getAll();
-          setCountries(response.data);
-        }
-      }
-      fetchCountries();
-      // Then find the current country's information to display using the URL parameter, :cca3
+      // Finding the country's information
       const foundCountry = countries.find(
         (storedCountry) => storedCountry.cca3 === cca3
       );
