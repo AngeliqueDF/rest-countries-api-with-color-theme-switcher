@@ -94,7 +94,7 @@ Once I could access all views of the app by navigating to them, I started workin
 
 ### Filtering and search functionalities.
     
-I chose to keep the state of filters and the search term in the URL. To avoid having a duplicate content issue, I added the appropriate `<meta>` tag.
+I chose to keep the state of filters and the search term in the URL (mainly for practice). To avoid having a duplicate content issue, I added the appropriate `<meta>` tag.
 
 ### Improving markup
 
@@ -110,9 +110,9 @@ There is no backend code. The data is fetched from REST countries API. I created
 
 ### What I learned
 
-With this project, I practiced how to make React Router v6 work in a basic app. It helped me cement my understanding of React. 
+My main goal for this project was to practice using React Router v6. It also helped me cement my understanding of React.
 
-Although I chose to use an external file to include all of the app's CSS, I explored other styling options and feel more familiar with them.
+Although I chose to use an external file to include all of the app's CSS, I explored other styling options (styled components, CSS modules) and feel more familiar with them.
 
 <br />
 
