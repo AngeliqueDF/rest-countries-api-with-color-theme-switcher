@@ -3,35 +3,35 @@ import React from "react";
 import CountryCard from "./CountryCard";
 
 const CountriesList = ({ countries, search, regionFilter }) => {
-	let countriesDisplayed = countries;
+  let countriesDisplayed = countries;
 
-	if (countriesDisplayed.length === 0) {
-		return <div>loading</div>;
-	}
+  if (countriesDisplayed.length === 0) {
+    return <div>loading</div>;
+  }
 
-	if (search !== "") {
-		const searchedCountries = countries.filter((country) =>
-			country.name.common.toLowerCase().includes(search.toLowerCase())
-		);
+  if (search !== "") {
+    const searchedCountries = countries.filter((country) =>
+      country.name.common.toLowerCase().includes(search.toLowerCase())
+    );
 
-		countriesDisplayed = searchedCountries;
-	}
+    countriesDisplayed = searchedCountries;
+  }
 
-	if (regionFilter !== "") {
-		const regionCountries = countriesDisplayed.filter(
-			(country) => country.region === regionFilter
-		);
+  if (regionFilter !== "") {
+    const regionCountries = countriesDisplayed.filter(
+      (country) => country.region === regionFilter
+    );
 
-		countriesDisplayed = regionCountries;
-	}
+    countriesDisplayed = regionCountries;
+  }
 
-	return (
-		<ul className="countries-list">
-			{countriesDisplayed.map((country) => (
-				<CountryCard key={country.cca3} country={country} />
-			))}
-		</ul>
-	);
+  return (
+    <ul className="countries-list">
+      {countriesDisplayed.map((country) => (
+        <CountryCard key={country.cca3} country={country} />
+      ))}
+    </ul>
+  );
 };
 
 export default CountriesList;

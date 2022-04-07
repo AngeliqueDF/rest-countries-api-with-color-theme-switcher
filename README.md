@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# REST Countries API with color theme switcher
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot of the countries REST API app](./src/images/desktop-screenshot-light.png)
 
-## Available Scripts
+<div align="center">
+  <img src="./src/images/logo-html5.svg">
+  <img src="./src/images/logo-css3.svg">
+  <img src="./src/images/logo-reactjs-small.svg" style="width:124px; height: 64px">
+  <img src="./src/images/logo-getbootstrap.svg">
+</div>
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+_Learn basic facts about the countries of the world._
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- [![Under Development](https://img.shields.io/badge/under-development-orange.svg)](https://github.com/) -->
+<hr />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
 
-### `npm test`
+## Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>
+<a href="/.github/README.md">GitHub repo</a> • <a href="/.github/CONTRIBUTING.md">Live demo </a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Project board</a>
+</p>
 
-### `npm run build`
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to run the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. `git clone HTTPS_REPO_URL MY-FOLDER-NAME`
+2. `cd MY-FOLDER-NAME`
+3. `npm install`
+4. `npm start`
+5. visit `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+## Description
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project is my submission for the REST Countries API with color theme switcher challenge from Frontend Mentor.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> ## The challenge
+>
+> Your challenge is to integrate with the REST Countries V2 API to pull country data and display it like in the designs.
+>
+> You can use any JavaScript framework/library on the front-end such as [React](https://reactjs.org) or [Vue](https://vuejs.org). You also have complete control over which packages you use to do things like make HTTP requests or style your project.
+>
+> Your users should be able to:
+>
+> - See all countries from the API on the homepage
+> - Search for a country using an `input` field
+> - Filter countries by region
+> - Click on a country to see more detailed information on a separate page
+> - Click through to the border countries on the detail page
+> - Toggle the color scheme between light and dark mode _(optional)_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- View a list of all countries of the world with basic facts about each.
+- Filter countries based on region.
+- Search for countries by their name.
+- Click on a card to see more details about the country and navigate to bordering countries.
+- Toggle dark/light mode.
+- Responsive.
+- Accessible.
 
-## Learn More
+<p align="center">
+  <img src="./src/images/mobile-screenshot-dark.png" alt="Screenshot of the countries REST API app on mobile in dark mode." width="50%">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `React.js` to build the UI.
+- `react-router-dom` for the navigation between views.
+- `react-bootstrap` to build accessible components.
+- `localStorage` to set the correct theme depending on system color scheme and user's choices
+- `scss`
+- `axios` to query the API.
 
-### Code Splitting
+## How I built this project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Routing
 
-### Analyzing the Bundle Size
+First, I focused on setting up React Router v6 for the navigation: defining routes, dividing the app in components and passing them the props they need.
+   [video capture]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+At this point the app still had a very basic appearance but the routing worked.
 
-### Making a Progressive Web App
+Once I could access all views of the app by navigating to them, I started working on their interactivity.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Filtering and search functionalities.
+    
+I chose to keep the state of each in the URL. To avoid having a duplicate content issue, I added the proper `<meta>` tag.
 
-### Advanced Configuration
+### Improving markup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Then I started working on HTML markup. I used `react-bootstrap` since it provides accessible components, especially the `Dropdown` component. Later, I refactored some of the components for better legibility and to solve accessibilites issues.
 
-### Deployment
+### Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+I added styling using a mobile-first approach with `scss` (I will definitely review the CSS).
 
-### `npm run build` fails to minify
+### Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The backend data is fetched from REST countries API. I created a `countriesService` module that I use in App.js to fetch the data.
+
+
+
+
+
+
+
+
+
