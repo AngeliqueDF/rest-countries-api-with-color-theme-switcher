@@ -16,8 +16,6 @@ _Learn basic facts about the countries of the world._
 <!-- [![Under Development](https://img.shields.io/badge/under-development-orange.svg)](https://github.com/) -->
 <hr />
 
-<br />
-
 ## Links
 
 <p>
@@ -78,12 +76,17 @@ This project is my submission for the REST Countries API with color theme switch
 - `scss`
 - `axios` to query the API.
 
+<br />
+
 ## How I built this project
 
 ### Routing
 
 First, I focused on setting up React Router v6 for the navigation: defining routes, dividing the app in components and passing them the props they need.
-   [video capture]
+
+<div align="center">
+  <img src="./src/images/video-capture-of-routing.gif" width="80%">
+</div>
 
 At this point the app still had a very basic appearance but the routing worked.
 
@@ -91,7 +94,7 @@ Once I could access all views of the app by navigating to them, I started workin
 
 ### Filtering and search functionalities.
     
-I chose to keep the state of each in the URL. To avoid having a duplicate content issue, I added the proper `<meta>` tag.
+I chose to keep the state of filters and the search term in the URL. To avoid having a duplicate content issue, I added the appropriate `<meta>` tag.
 
 ### Improving markup
 
@@ -103,18 +106,40 @@ I added styling using a mobile-first approach with `scss` (I will definitely rev
 
 ### Backend
 
-The backend data is fetched from REST countries API. I created a `countriesService` module that I use in App.js to fetch the data.
+There is no backend code. The data is fetched from REST countries API. I created a `countriesService` module that I use in App.js to fetch the data.
 
+### What I learned
 
+With this project, I practiced how to make React Router v6 work in a basic app. It helped me cement my understanding of React. 
 
+Although I chose to use an external file to include all of the app's CSS, I explored other styling options and feel more familiar with them.
 
+<br />
 
+### Recommended technologies and tools
 
+- `prettier` for code formatting.
 
+<br />
 
+## Status
+
+The app is working but needs improvements.
+
+### Planned changes
+
+- [ ] Refactor the CSS to avoid unnecessary high specificity, reduce code where possible.
+- [ ] Add state for loading.
+- [ ] Add a retry functionality when fetching the API fails.
 
 ## Sources
 
 - [REST Countries API with color theme switcher by Frontend Mentor.](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-5-55ZCQuW)
 
+<!-- ## Useful references
 
+1. Resource
+2. Resource
+3. Resource
+
+## Inspiration -->
