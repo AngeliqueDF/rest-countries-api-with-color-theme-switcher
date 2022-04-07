@@ -113,3 +113,8 @@ The backend data is fetched from REST countries API. I created a `countriesServi
 
 
 
+## Sources
+
+- [REST Countries API with color theme switcher by Frontend Mentor.](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-5-55ZCQuW)
+
+
