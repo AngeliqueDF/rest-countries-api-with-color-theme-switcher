@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import helpers from "./../utils/helpers";
+import helpers from "../../utils/helpers";
 
-import GoBackButton from "./GoBackButton";
+import GoBackButton from "../GoBackButton";
 import Image from "react-bootstrap/Image";
-import CountryInfoRow from "./CountryInfoRow";
+import CountryInfoRow from "../CountryInfoRow";
+import StyledCountryDetails from "./style";
 
 const CountryDetails = ({ countries, setCountries }) => {
   const [country, setCountry] = useState(null);
@@ -55,7 +56,7 @@ const CountryDetails = ({ countries, setCountries }) => {
     { term: "Capital", value: country.capital },
   ];
   return (
-    <>
+    <StyledCountryDetails>
       <div className="country-details-container">
         <GoBackButton />
 
@@ -122,7 +123,7 @@ const CountryDetails = ({ countries, setCountries }) => {
           </div>
         </div>
       </div>
-    </>
+    </StyledCountryDetails>
   );
 };
 
