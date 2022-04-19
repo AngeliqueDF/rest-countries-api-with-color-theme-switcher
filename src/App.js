@@ -103,7 +103,7 @@ function App() {
         toggleTheme={handleThemeToggle}
       />
 
-      <main>
+      <>
         <Routes>
           <Route
             path="/"
@@ -127,7 +127,7 @@ function App() {
             }
           />
         </Routes>
-      </main>
+      </>
     </>
   );
 }
