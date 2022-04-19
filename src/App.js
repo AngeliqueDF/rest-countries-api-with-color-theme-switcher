@@ -5,7 +5,7 @@ import { Routes, Route, useSearchParams } from "react-router-dom";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
-import CountryDetails from "./components/CountryDetails";
+import CountryDetails from "./components/CountryDetails/CountryDetails";
 
 function App() {
   /**
