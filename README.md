@@ -73,7 +73,7 @@ This project is my submission for the REST Countries API with color theme switch
 - `react-router-dom` for the navigation between views.
 - `react-bootstrap` to build accessible components.
 - `localStorage` to set the correct theme depending on system color scheme and user's choices
-- `scss`
+- `scss` to write the app's styling.
 - `axios` to query the API.
 
 <br />
@@ -88,21 +88,21 @@ First, I focused on setting up React Router v6 for the navigation: defining rout
   <img src="./src/images/video-capture-of-routing.gif" width="80%">
 </div>
 
-At this point the app still had a very basic appearance but the routing worked.
+At this point the routing worked but the app still had a very basic appearance.
 
 Once I could access all views of the app by navigating to them, I started working on their interactivity.
 
 ### Filtering and search functionalities.
     
-I chose to keep the state of filters and the search term in the URL. To avoid having a duplicate content issue, I added the appropriate `<meta>` tag.
+I chose to keep the state of filters and the search term in the URL (mainly for practice). To avoid a duplicate content issue, I added the appropriate `<meta>` tag.
 
 ### Improving markup
 
-Then I started working on HTML markup. I used `react-bootstrap` since it provides accessible components, especially the `Dropdown` component. Later, I refactored some of the components for better legibility and to solve accessibilites issues.
+Then I started working on HTML markup. I used `react-bootstrap` since it provides accessible components, especially the `Dropdown` component. Later, I refactored some of the components for better code legibility and to reduce accessibilites issues.
 
 ### Styling
 
-I added styling using a mobile-first approach with `scss` (I will definitely review the CSS).
+I added styling using a mobile-first approach with `scss`. From the layout individual components.
 
 ### Backend
 
@@ -110,9 +110,9 @@ There is no backend code. The data is fetched from REST countries API. I created
 
 ### What I learned
 
-With this project, I practiced how to make React Router v6 work in a basic app. It helped me cement my understanding of React. 
+My main goal for this project was to practice using React Router v6. It also helped me solidify my understanding of React.
 
-Although I chose to use an external file to include all of the app's CSS, I explored other styling options and feel more familiar with them.
+Although I chose to use an external file to include all of the app's CSS, I explored other styling options (styled components, CSS modules) and feel more familiar with them.
 
 <br />
 
@@ -128,7 +128,7 @@ The app is working but needs improvements.
 
 ### Planned changes
 
-- [x] Refactor the CSS to avoid unnecessary high specificity, reduce code where possible.
+- [x] Refactor the CSS to avoid unnecessary high specificity, reduce code where possible, customize Bootstrap's theme utility.
 - [ ] Add state for loading.
 - [ ] Add a retry functionality when fetching the API fails.
 
@@ -136,10 +136,10 @@ The app is working but needs improvements.
 
 - [REST Countries API with color theme switcher by Frontend Mentor.](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-5-55ZCQuW)
 
-<!-- ## Useful references
+## Useful references
 
-1. Resource
+1. [URLSearchParams on MDN](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 2. Resource
 3. Resource
 
-## Inspiration -->
+<!-- ## Inspiration -->

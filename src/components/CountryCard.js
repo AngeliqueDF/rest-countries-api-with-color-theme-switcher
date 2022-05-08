@@ -5,6 +5,37 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import CountryInfoRow from "./../components/CountryInfoRow";
 
+import styled from "styled-components";
+
+const StyledCountryCard = styled.li`
+  /* .country-card { */
+  margin: 0 auto 2rem;
+  width: 18rem;
+  img {
+    height: 10rem;
+    box-shadow: var(--light-shadow);
+    border-radius: 7px 7px 0 0;
+  }
+  .card {
+    border-radius: 7px;
+    border: none;
+    background-color: var(--elements);
+  }
+  .card-title {
+    padding: 1rem 1rem 1rem 1.5rem;
+    font-size: 1.1rem;
+    margin: 1rem 0 0;
+    font-weight: bold;
+  }
+  .card-body {
+    padding: 0 1.5rem 3.25rem 1.5rem;
+    li {
+      margin: 0.1rem 0;
+    }
+  }
+  /* } */
+`;
+
 const CountryCard = ({ country }) => {
   const countryCardInfo = [
     { term: "Population", value: helpers.formatNumber(country.population) },
@@ -12,7 +43,7 @@ const CountryCard = ({ country }) => {
     { term: "Capital", value: country.capital },
   ];
   return (
-    <li className="country-card">
+    <StyledCountryCard className="country-card">
       <Link to={`countries/${country.cca3}`}>
         <Card as="article">
           <Card.Img
@@ -36,7 +67,7 @@ const CountryCard = ({ country }) => {
           </Card.Body>
         </Card>
       </Link>
-    </li>
+    </StyledCountryCard>
   );
 };
 

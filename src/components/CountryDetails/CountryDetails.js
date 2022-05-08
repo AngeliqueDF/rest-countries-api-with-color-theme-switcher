@@ -1,11 +1,11 @@
-import countriesService from "./../services/countries";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import helpers from "./../utils/helpers";
+import helpers from "../../utils/helpers";
 
-import GoBackButton from "./GoBackButton";
+import GoBackButton from "../GoBackButton";
 import Image from "react-bootstrap/Image";
-import CountryInfoRow from "./CountryInfoRow";
+import CountryInfoRow from "../CountryInfoRow";
+import StyledCountryDetails from "./style";
 
 const CountryDetails = ({ countries, setCountries }) => {
   const [country, setCountry] = useState(null);
@@ -13,19 +13,9 @@ const CountryDetails = ({ countries, setCountries }) => {
   // Getting the current country code from the URL.
   const { cca3 } = useParams();
 
-  // We check we still have the value of countries (lost when the browser is refreshed for example).
-  // It is needed to display the selected country's detailed information and to find bordering countries' names by their :cca3
   useEffect(() => {
     try {
-      // If we lost the countries values, we request them from the API.
-      async function fetchCountries() {
-        if (countries.length === 0) {
-          const response = await countriesService.getAll();
-          setCountries(response.data);
-        }
-      }
-      fetchCountries();
-      // Then find the current country's information to display using the URL parameter, :cca3
+      // Finding the country's information
       const foundCountry = countries.find(
         (storedCountry) => storedCountry.cca3 === cca3
       );
@@ -66,7 +56,7 @@ const CountryDetails = ({ countries, setCountries }) => {
     { term: "Capital", value: country.capital },
   ];
   return (
-    <>
+    <StyledCountryDetails>
       <div className="country-details-container">
         <GoBackButton />
 
@@ -133,7 +123,7 @@ const CountryDetails = ({ countries, setCountries }) => {
           </div>
         </div>
       </div>
-    </>
+    </StyledCountryDetails>
   );
 };
 
