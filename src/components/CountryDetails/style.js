@@ -82,7 +82,7 @@ const StyledCountryDetails = styled.main`
         width: 49%;
       }
       .country-info-row {
-        margin-bottom: 0.75rem;
+        margin-block-end: 0.75rem;
       }
       .country-info {
         display: flex;
@@ -92,7 +92,7 @@ const StyledCountryDetails = styled.main`
           width: 49%;
         }
         dl dd {
-          margin-bottom: 0 !important;
+          margin-block-end: 0 !important;
         }
       }
       .currencies,
