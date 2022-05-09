@@ -128,7 +128,7 @@ The app is working but needs improvements.
 
 ### Planned changes
 
-- [ ] Refactor the CSS to avoid unnecessary high specificity, reduce code where possible, customize Bootstrap's theme utility.
+- [x] Refactor the CSS to avoid unnecessary high specificity, reduce code where possible, customize Bootstrap's theme utility.
 - [ ] Add state for loading.
 - [ ] Add a retry functionality when fetching the API fails.
 
