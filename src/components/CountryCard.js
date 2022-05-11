@@ -8,9 +8,10 @@ import CountryInfoRow from "./../components/CountryInfoRow";
 import styled from "styled-components";
 
 const StyledCountryCard = styled.li`
-  /* .country-card { */
-  margin: 0 auto 2rem;
   width: 18rem;
+  flex-basis: 16.3%;
+  flex-basis: 23%;
+  margin-block-end: 4rem;
   img {
     height: 10rem;
     box-shadow: var(--light-shadow);
@@ -27,13 +28,16 @@ const StyledCountryCard = styled.li`
     margin: 1rem 0 0;
     font-weight: bold;
   }
+
+  .card-body {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
   .card-body {
     padding: 0 1.5rem 3.25rem 1.5rem;
     li {
       margin: 0.1rem 0;
     }
   }
-  /* } */
 `;
 
 const CountryCard = ({ country }) => {

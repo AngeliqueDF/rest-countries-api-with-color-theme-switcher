@@ -8,18 +8,13 @@ const StyledCountriesList = styled.ul`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   @media screen and (min-width: 1440px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    .country-card {
-      flex-basis: 16.3rem;
-      margin: 0 0 4rem;
-      .card-body {
-        padding: 0 1.5rem 2rem 1.5rem;
-      }
-    }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
   }
 `;
 
