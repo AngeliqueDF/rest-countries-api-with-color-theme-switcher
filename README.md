@@ -34,25 +34,6 @@ _Learn basic facts about the countries of the world._
 
 <br />
 
-## Description
-
-This project is my submission for the REST Countries API with color theme switcher challenge from Frontend Mentor.
-
-> ## The challenge
->
-> Your challenge is to integrate with the REST Countries V2 API to pull country data and display it like in the designs.
->
-> You can use any JavaScript framework/library on the front-end such as [React](https://reactjs.org) or [Vue](https://vuejs.org). You also have complete control over which packages you use to do things like make HTTP requests or style your project.
->
-> Your users should be able to:
->
-> - See all countries from the API on the homepage
-> - Search for a country using an `input` field
-> - Filter countries by region
-> - Click on a country to see more detailed information on a separate page
-> - Click through to the border countries on the detail page
-> - Toggle the color scheme between light and dark mode _(optional)_
-
 ## Features
 
 - View a list of all countries of the world with basic facts about each.
@@ -78,9 +59,28 @@ This project is my submission for the REST Countries API with color theme switch
 
 <br />
 
-## How I built this project
+## Description
 
-### Routing
+This project is my submission for the REST Countries API with color theme switcher challenge from Frontend Mentor.
+
+> ## The challenge
+>
+> Your challenge is to integrate with the REST Countries V2 API to pull country data and display it like in the designs.
+>
+> You can use any JavaScript framework/library on the front-end such as [React](https://reactjs.org) or [Vue](https://vuejs.org). You also have complete control over which packages you use to do things like make HTTP requests or style your project.
+>
+> Your users should be able to:
+>
+> - See all countries from the API on the homepage
+> - Search for a country using an `input` field
+> - Filter countries by region
+> - Click on a country to see more detailed information on a separate page
+> - Click through to the border countries on the detail page
+> - Toggle the color scheme between light and dark mode _(optional)_
+
+### How I built this project
+
+#### Routing
 
 First, I focused on setting up React Router v6 for the navigation: defining routes, dividing the app in components and passing them the props they need.
 
@@ -112,8 +112,6 @@ There is no backend code. The data is fetched from REST countries API. I created
 
 My main goal for this project was to practice using React Router v6. It also helped me solidify my understanding of React.
 
-Although I chose to use an external file to include all of the app's CSS, I explored other styling options (styled components, CSS modules) and feel more familiar with them.
-
 <br />
 
 ### Recommended technologies and tools
@@ -139,7 +137,3 @@ The app is working but needs improvements.
 ## Useful references
 
 1. [URLSearchParams on MDN](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
-2. Resource
-3. Resource
-
-<!-- ## Inspiration -->
