@@ -137,3 +137,9 @@ The app is working but needs improvements.
 ## Useful references
 
 1. [URLSearchParams on MDN](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+
+## Author
+
+- [@AngeliqueDF on GitHub.](https://github.com/AngeliqueDF)
+- [Visit my website.](https://adf.dev)
+- [View my Frontend Mentor profile.](https://www.frontendmentor.io/profile/AngeliqueDF)
