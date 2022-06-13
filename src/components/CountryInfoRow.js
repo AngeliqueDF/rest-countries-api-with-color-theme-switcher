@@ -15,7 +15,7 @@ const CountryInfoRow = ({ term, values }) => {
       if (term === "Currencies") {
         return values.map((value, i) => (
           <DisplayValueTemplate
-            key={value}
+            key={value.name}
             value={helpers.listPunctuation(values, value.name, i)}
           />
         ));
