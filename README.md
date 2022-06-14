@@ -19,7 +19,7 @@ _Learn basic facts about the countries of the world._
 ## Links
 
 <p>
-<a href="/.github/README.md">GitHub repo</a> • <a href="/.github/CONTRIBUTING.md">Live demo </a>
+<a href="/.github/README.md">GitHub repo</a> • <a href="https://dreamy-cranachan-ffea62.netlify.app/">Live demo</a>
 </p>
 
 <br />
