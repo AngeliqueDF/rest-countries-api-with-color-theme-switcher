@@ -1,6 +1,6 @@
-# REST Countries API with color theme switcher
+# The "Where in the world?" React app
 
-![Screenshot of the countries REST API app](./src/images/desktop-screenshot-light.png)
+![Screenshot of the "Where in the world?" React app](./src/images/desktop-screenshot-light.png)
 
 <div align="center">
   <img src="./src/images/logo-html5.svg">
@@ -39,10 +39,10 @@ _Learn basic facts about the countries of the world._
 - View a list of all countries of the world with basic facts about each.
 - Filter countries based on region.
 - Search for countries by their name.
-- Click on a card to see more details about the country and navigate to bordering countries.
+- Click on a card to see more details about the country and navigate to bordering countries' pages.
 - Toggle dark/light mode.
-- Responsive.
-- Accessible.
+- Responsiveness.
+- Accessibility.
 
 <p align="center">
   <img src="./src/images/mobile-screenshot-dark.png" alt="Screenshot of the countries REST API app on mobile in dark mode." width="50%">
