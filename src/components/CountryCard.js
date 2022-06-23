@@ -28,10 +28,7 @@ const StyledCountryCard = styled.li`
   }
 
   .card-body {
-    padding: 0 1.5rem 2rem 1.5rem;
-  }
-  .card-body {
-    padding: 0 1.5rem 3.25rem 1.5rem;
+    padding: 0 1.5rem 1.2rem;
     li {
       margin: 0.1rem 0;
     }
