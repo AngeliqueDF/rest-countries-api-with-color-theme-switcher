@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 const StyledCountryCard = styled.li`
   width: 18rem;
-  margin-block-end: 4rem;
+  margin-block-end: 3rem;
   img {
     height: 10rem;
     box-shadow: var(--light-shadow);
