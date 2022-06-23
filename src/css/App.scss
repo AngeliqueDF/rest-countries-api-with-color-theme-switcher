@@ -156,6 +156,19 @@ a .card-title {
   fill: white;
 }
 
+.attribution {
+  position: fixed;
+  font-size: 11px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @media only screen and (min-width: 1440px) {
   header {
     margin-block-end: 3rem;
