@@ -9,8 +9,6 @@ import styled from "styled-components";
 
 const StyledCountryCard = styled.li`
   width: 18rem;
-  flex-basis: 16.3%;
-  flex-basis: 23%;
   margin-block-end: 4rem;
   img {
     height: 10rem;
