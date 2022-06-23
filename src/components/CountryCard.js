@@ -39,6 +39,10 @@ const StyledCountryCard = styled.li`
   @media screen and (min-width: 768px) {
     margin: 0 2.2rem 4rem 0;
   }
+  @media screen and (min-width: 1440px) {
+    margin: unset;
+    margin-block-end: 4rem;
+  }
 `;
 
 const CountryCard = ({ country }) => {
