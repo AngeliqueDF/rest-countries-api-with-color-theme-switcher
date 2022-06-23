@@ -8,9 +8,9 @@ const StyledCountriesList = styled.ul`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
   width: 100%;
+  justify-content: center;
   @media screen and (min-width: 1440px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

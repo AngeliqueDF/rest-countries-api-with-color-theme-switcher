@@ -9,9 +9,7 @@ import styled from "styled-components";
 
 const StyledCountryCard = styled.li`
   width: 18rem;
-  flex-basis: 16.3%;
-  flex-basis: 23%;
-  margin-block-end: 4rem;
+  margin-block-end: 3rem;
   img {
     height: 10rem;
     box-shadow: var(--light-shadow);
@@ -30,13 +28,17 @@ const StyledCountryCard = styled.li`
   }
 
   .card-body {
-    padding: 0 1.5rem 2rem 1.5rem;
-  }
-  .card-body {
-    padding: 0 1.5rem 3.25rem 1.5rem;
+    padding: 0 1.5rem 1.2rem;
     li {
       margin: 0.1rem 0;
     }
+  }
+  @media screen and (min-width: 768px) {
+    margin: 0 2.2rem 4rem 0;
+  }
+  @media screen and (min-width: 1440px) {
+    margin: unset;
+    margin-block-end: 4rem;
   }
 `;
 
