@@ -8,7 +8,6 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-inline: var(--horizontal-spacing);
     margin-block-end: 1.4rem;
   }
   .region-toggle,
