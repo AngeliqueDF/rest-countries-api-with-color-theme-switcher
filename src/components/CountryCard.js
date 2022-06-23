@@ -36,6 +36,9 @@ const StyledCountryCard = styled.li`
       margin: 0.1rem 0;
     }
   }
+  @media screen and (min-width: 768px) {
+    margin: 0 2.2rem 4rem 0;
+  }
 `;
 
 const CountryCard = ({ country }) => {
