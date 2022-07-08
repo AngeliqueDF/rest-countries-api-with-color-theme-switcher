@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import darkModeIcon from "./../../images/icon-dark-mode.svg";
+import lightModeIcon from "./../../images/icon-light-mode.svg";
 
 import styled from "styled-components";
 
@@ -49,6 +51,11 @@ const Header = ({ toggleTheme, darkThemeEnabled }) => {
       </h1>
 
       <button
+        style={{
+          backgroundImage: `url(${
+            darkThemeEnabled ? lightModeIcon : darkModeIcon
+          })`,
+        }}
         className="toggle-theme capitalize"
         onClick={handleToggleTheme}
       >
