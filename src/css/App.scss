@@ -92,34 +92,6 @@ li.list-group-item {
   background-color: transparent;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--elements);
-  margin-block-end: 1rem;
-  padding: 1rem 1.6rem;
-  box-shadow: var(--light-shadow);
-  -webkit-box-shadow: var(--light-shadow);
-  -moz-box-shadow: var(--light-shadow);
-
-  h1 a {
-    font-weight: 800;
-  }
-
-  .toggle-theme {
-    color: var(--text);
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    background-image: var(--theme-toggle-button-icon);
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 16px 16px;
-    padding-inline-start: 1.5rem;
-    font-size: 0.8rem;
-  }
-}
-
 h1 a,
 a .card-title {
   text-decoration: none;
