@@ -7,20 +7,29 @@ import lightModeIcon from "./../../images/icon-light-mode.svg";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Header from "./Header";
+import App from "./../../App";
+
+// Solve window.matchMedia is not a function error
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };
 
 describe("Header", () => {
   test("Renders Header component", () => {
     render(
       <Router>
-        <Header darkThemeEnabled={false} />
+        <App />
       </Router>
     );
 
-    screen.getByText("Where in the world?");
     expect(screen.getByText("Where in the world?")).toBeInTheDocument();
-    expect(screen.getByRole("button")).toHaveStyle(
-      `background-image: url(${darkModeIcon})`
-    );
+    expect(screen.getByTestId("theme-toggler")).toBeInTheDocument();
   });
 
 });
