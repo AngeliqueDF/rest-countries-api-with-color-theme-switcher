@@ -58,4 +58,18 @@ describe("Header", () => {
     expect(screen.getByText("Light mode")).toBeInTheDocument();
   });
 
+  test("When light mode is enabled, the theme toggler displays the dark mode icon and text", () => {
+    render(
+      <Router>
+        <Header darkThemeEnabled={false} />
+      </Router>
+    );
+
+    expect(screen.getByRole("button")).toHaveStyle(
+      `background-image: url(${darkModeIcon})`
+    );
+    expect(screen.getByText("Dark mode")).toBeInTheDocument();
+  });
+});
+
 });
