@@ -5,6 +5,9 @@ import "@testing-library/jest-dom";
 import darkModeIcon from "./../../images/icon-dark-mode.svg";
 import lightModeIcon from "./../../images/icon-light-mode.svg";
 
+import { renderHook, act } from "@testing-library/react-hooks";
+import useThemeToggler from "../../utils/hooks/useThemeToggler";
+
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Header from "./Header";
@@ -72,4 +75,23 @@ describe("Header", () => {
   });
 });
 
+describe("useThemeToggler hook ", () => {
+  test("useThemeToggler hook disables dark theme", () => {
+    const { result } = renderHook(() => useThemeToggler(true));
+
+    act(() => {
+      result.current.handleThemeToggle();
+    });
+
+    expect(result.current.darkThemeEnabled).toBe(false);
+  });
+  test("useThemeToggler hook enables dark theme", () => {
+    const { result } = renderHook(() => useThemeToggler(false));
+
+    act(() => {
+      result.current.handleThemeToggle();
+    });
+
+    expect(result.current.darkThemeEnabled).toBe(true);
+  });
 });
