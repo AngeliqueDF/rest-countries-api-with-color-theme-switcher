@@ -85,4 +85,13 @@ describe("useThemeToggler hook ", () => {
 
     expect(result.current.darkThemeEnabled).toBe(false);
   });
+  test("useThemeToggler hook enables dark theme", () => {
+    const { result } = renderHook(() => useThemeToggler(false));
+
+    act(() => {
+      result.current.handleThemeToggle();
+    });
+
+    expect(result.current.darkThemeEnabled).toBe(true);
+  });
 });
