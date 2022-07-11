@@ -51,6 +51,7 @@ const Header = ({ toggleTheme, darkThemeEnabled }) => {
       </h1>
 
       <button
+        data-testid="theme-toggler"
         style={{
           backgroundImage: `url(${
             darkThemeEnabled ? lightModeIcon : darkModeIcon
