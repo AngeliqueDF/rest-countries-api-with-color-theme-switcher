@@ -1,6 +1,6 @@
 import React from "react";
 
-import SearchCountry from "./SearchCountry";
+import SearchCountry from "./SearchCountry/SearchCountry";
 import RegionFilter from "./RegionFilter";
 import CountriesList from "./CountriesList";
 
