@@ -34,7 +34,7 @@ const SearchCountry = ({ search, handleSearch }) => {
     <StyledWrapper
       className="search-input"
       type="search"
-      placeholder="Search for a country..."
+      placeholder="Search for a country…"
       value={search}
       onChange={handleChange}
     />
