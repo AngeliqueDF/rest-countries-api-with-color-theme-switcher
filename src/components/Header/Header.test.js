@@ -13,7 +13,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./Header";
 import App from "./../../App";
 
-// Solve window.matchMedia is not a function error
+// Solve "TypeError: window.matchMedia is not a function"
 window.matchMedia =
   window.matchMedia ||
   function () {
@@ -34,64 +34,5 @@ describe("Header", () => {
 
     expect(screen.getByText("Where in the world?")).toBeInTheDocument();
     expect(screen.getByTestId("theme-toggler")).toBeInTheDocument();
-  });
-
-  test("Calls toggleTheme prop when 'Dark Mode' button is clicked.", async () => {
-    const handleClick = jest.fn();
-    render(
-      <Router>
-        <Header darkThemeEnabled={false} toggleTheme={handleClick} />
-      </Router>
-    );
-
-    await userEvent.click(screen.getByText("Dark mode"));
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
-
-  test("When dark mode is enabled, the theme toggler displays the light mode icon and text", () => {
-    render(
-      <Router>
-        <Header darkThemeEnabled={true} />
-      </Router>
-    );
-
-    expect(screen.getByRole("button")).toHaveStyle(
-      `background-image: url(${lightModeIcon})`
-    );
-    expect(screen.getByText("Light mode")).toBeInTheDocument();
-  });
-
-  test("When light mode is enabled, the theme toggler displays the dark mode icon and text", () => {
-    render(
-      <Router>
-        <Header darkThemeEnabled={false} />
-      </Router>
-    );
-
-    expect(screen.getByRole("button")).toHaveStyle(
-      `background-image: url(${darkModeIcon})`
-    );
-    expect(screen.getByText("Dark mode")).toBeInTheDocument();
-  });
-});
-
-describe("useThemeToggler hook ", () => {
-  test("useThemeToggler hook disables dark theme", () => {
-    const { result } = renderHook(() => useThemeToggler(true));
-
-    act(() => {
-      result.current.handleThemeToggle();
-    });
-
-    expect(result.current.darkThemeEnabled).toBe(false);
-  });
-  test("useThemeToggler hook enables dark theme", () => {
-    const { result } = renderHook(() => useThemeToggler(false));
-
-    act(() => {
-      result.current.handleThemeToggle();
-    });
-
-    expect(result.current.darkThemeEnabled).toBe(true);
   });
 });
