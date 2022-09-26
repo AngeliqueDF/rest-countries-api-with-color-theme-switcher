@@ -11,7 +11,6 @@ import useThemeToggler from "./useThemeToggler.js";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
-import App from "../../App";
 
 // Solve "TypeError: window.matchMedia is not a function"
 window.matchMedia =
