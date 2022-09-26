@@ -13,6 +13,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import App from "../../App";
 
+// Solve "TypeError: window.matchMedia is not a function"
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };
+
 describe("Dark theme", () => {
   describe("Header", () => {
     test("Calls toggleTheme prop when 'Dark Mode' button is clicked.", async () => {
