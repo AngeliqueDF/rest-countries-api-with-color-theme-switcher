@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import helpers from "../../utils/helpers";
 
-import GoBackButton from "../GoBackButton";
+import GoBackButton from "./GoBackButton";
 import Image from "react-bootstrap/Image";
 import CountryInfoRow from "./../layout/CountryInfoRow/CountryInfoRow";
 import StyledCountryDetails from "./style";
