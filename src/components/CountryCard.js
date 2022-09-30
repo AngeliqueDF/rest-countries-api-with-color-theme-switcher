@@ -3,7 +3,7 @@ import helpers from "./../utils/helpers";
 
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import CountryInfoRow from "./../components/CountryInfoRow";
+import CountryInfoRow from "./layout/CountryInfoRow/CountryInfoRow";
 
 import styled from "styled-components";
 
